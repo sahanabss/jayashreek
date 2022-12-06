@@ -1,0 +1,32 @@
+import matplotlib 
+from matplotlib import pyplot as plt
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import math
+cars=pd.read_csv("C:/Users/Admin/Downloads/archive (4)/Cars93.csv")
+cars
+fig=plt.figure()
+plt.title("Price range of car")
+plt.boxplot(cars["Price"])
+print(np.min(cars.Price))
+print(np.max(cars.Price))
+print(np.std(cars.Price))
+print(np.mean(cars.Price))
+print(np.median(cars.Price))
+mode1=cars['MPG.city'].mode()
+print("highest frequency ",mode1)
+plt.hist(cars['MPG.city'])
+plt.title("frequency")
+plt.xlabel('MPG.city')
+plt.show()
+plt.scatter(cars['Horsepower'],cars['MPG.city'],marker="^")
+plt.xlabel('Horsepower')
+plt.ylabel('MPG.city')
+plt.show()
+plt.plot(cars['EngineSize'])
+plt.plot(cars['Horsepower'])
+plt.title("Enginesize vs horsepower")
+plt.xlabel('EngineSize')
+plt.ylabel('Horsepower')
+plt.show()
